@@ -2,180 +2,45 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Happy BirthDay Bhiya</title>
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <title>Happy Birthday Bhaiya</title>
 </head>
 
 <body>
-  <iframe src="bday.mp3" class="audio" width="0" height="0" frameborder="0" allowfullscreen=""></iframe>
-  <style>
-    html {
-      box-sizing: border-box;
-      background: #ffc600;
-      font-family: 'helvetica neue';
-      font-size: 20px;
-      font-weight: 200;
-    }
+    <style>
+        body {
+            background: url(bg.jpg) no-repeat;
+            background-size: cover;
+        }
 
-    body {
-      margin: 0;
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
-
-    .panels {
-      min-height: 100vh;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .panel {
-      background: #6B0F9C;
-      box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
-      color: white;
-      text-align: center;
-      align-items: center;
-      /* Safari transitionend event.propertyName === flex */
-      /* Chrome + FF transitionend event.propertyName === flex-grow */
-      transition:
-        font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-        flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-        background 0.2s;
-      font-size: 20px;
-      background-size: cover;
-      background-position: center;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .panel1 {
-      background-image: url(img-2.jpeg);
-    }
-
-    .panel2 {
-      background-image: url(img-8.jpg);
-    }
-
-    .panel3 {
-      background-image: url(img-9.jpg);
-    }
-
-    .panel4 {
-      background-image: url(img-3.jpeg);
-    }
-
-    .panel5 {
-      background-image: url(img-4.jpeg);
-    }
-
-    /* Flex Children */
-    .panel>* {
-      margin: 0;
-      width: 100%;
-      transition: transform 0.5s;
-      flex: 1 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .panel>*:first-child {
-      transform: translateY(-100%);
-    }
-
-    .panel.open-active>*:first-child {
-      transform: translateY(0);
-    }
-
-    .panel>*:last-child {
-      transform: translateY(100%);
-    }
-
-    .panel.open-active>*:last-child {
-      transform: translateY(0);
-    }
-
-    .panel p {
-      text-transform: uppercase;
-      font-family: 'Amatic SC', cursive;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 2em;
-    }
-
-    .panel p:nth-child(2) {
-      font-size: 4em;
-    }
-
-    .panel.open {
-      font-size: 40px;
-      flex: 5;
-    }
-  </style>
-
-
-  <div class="panels">
-    <div class="panel panel1">
-      <p>Happy</p>
-      <p>Birthay</p>
-      <p>Bhaiya</p>
+        h1 {
+            margin: 10px;
+            text-transform: uppercase;
+            font-family: 'Amatic SC', cursive;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+            color: white;
+            font-size: 200px;
+        }
+        h2{
+            margin: 10px;
+            text-transform: uppercase;
+            font-family: 'Amatic SC', cursive;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+            color: white;
+            font-size: 100px;
+        }
+        div{
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+    <h1>HAPPY BIRTHDAY BHIAYA</h1>
+    <div>
+    <h2>click to open gift</h2>
+    <a href="second.html"><img src="giftbox.png" alt=""></a>
     </div>
-    <div class="panel panel2">
-      <p>May</p>
-      <p>God Bless</p>
-      <p>you</p>
-    </div>
-    <div class="panel panel3">
-      <p>May all your</p>
-      <p>Dreams always be</p>
-      <p>Within your reach</p>
-    </div>
-    <div class="panel panel4">
-      <p>This is for</p>
-      <p>Best coding</p>
-      <p>Teacher</p>
-    </div>
-    <div class="panel panel5">
-      <p>Again Happy Birthday</p>
-      <p>From My</p>
-      <p>Whole Family</p>
-    </div>
-  </div>
-
-  <script>
-    const panels = document.querySelectorAll(".panel");
-
-    //  const toggleOpen = () => {
-    //    console.log("hello");
-    //    this.classList.toggle("open");
-
-    //   }
-    function toggleOpen() {
-      console.log("hello");
-      this.classList.toggle("open")
-    }
-
-    function toggleActive(e) {
-      console.log(e.propertyName);
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle("open-active");
-      ;}
-    };
-
-    panels.forEach(panel => panel.addEventListener("click", toggleOpen));
-    panels.forEach(panel => panel.addEventListener('transitionend', 
-      toggleActive));
-  </script>
-
-
-
 </body>
 
 </html>
